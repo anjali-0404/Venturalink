@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>API Docs | Venturalink</title>
+  <title>Top 5 Mistakes Founders Make | Venturalink</title>
   <link rel="icon" type="image/png" href="V.png">
   <link rel="stylesheet" href="styles/mainindex.css">
   <style>
@@ -14,7 +14,6 @@
       margin: 0;
       min-height: 100vh;
     }
-
     .main-header {
       background: #23243a;
       box-shadow: 0 2px 16px rgba(102,126,234,0.08);
@@ -23,57 +22,24 @@
       justify-content: center;
       align-items: center;
     }
-
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2rem;
-    }
-
-    .logo {
-      margin-right: 2rem;
-    }
-
     .logo-container {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-
     .logo-icon svg {
       height: 2.5rem;
       width: 2.5rem;
       display: block;
     }
-
     .logo-text img {
       height: 2.2rem;
-      margin-right: 0.5rem;
+      margin-right: -8px;
       vertical-align: middle;
       filter: drop-shadow(0 0 8px #667eea);
     }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .nav-link {
-      padding: 0.5rem 0;
-      font-size: 1rem;
-      color: #e4e8f7;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-link:hover {
-      color: #764ba2;
-    }
-
-    .api-section {
-      max-width: 900px;
+    .blog-post-section {
+      max-width: 800px;
       margin: 3rem auto 2rem auto;
       background: rgba(34,36,58,0.95);
       border-radius: 1.5rem;
@@ -81,62 +47,38 @@
       box-shadow: 0 8px 32px rgba(102,126,234,0.12);
       text-align: left;
     }
-    .api-section h1 {
+    .blog-post-section h1 {
       color: #667eea;
       font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       letter-spacing: 1px;
-      text-align: center;
     }
-    .api-section p {
-      margin-bottom: 2rem;
+    .blog-post-meta {
       color: #aab4e8;
-      font-size: 1.1rem;
-      text-align: center;
-    }
-    .api-endpoint {
-      background: #23243a;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 2px 12px rgba(102,126,234,0.08);
+      font-size: 0.95rem;
       margin-bottom: 2rem;
     }
-    .endpoint-title {
-      color: #667eea;
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+    .blog-post-section p {
+      color: #e4e8f7;
+      font-size: 1.08rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
     }
-    .endpoint-method {
-      font-weight: bold;
+     .blog-post-section h2 {
       color: #764ba2;
-      margin-right: 1rem;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
     }
-    .endpoint-url {
-      font-family: monospace;
-      color: #e4e8f7;
-      background: #18192b;
-      padding: 0.2rem 0.6rem;
-      border-radius: 0.5rem;
-      font-size: 1rem;
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #667eea;
+      text-decoration: none;
+      font-weight: bold;
     }
-    .endpoint-desc {
-      color: #e4e8f7;
-      margin: 0.7rem 0 0.5rem 0;
-    }
-    .endpoint-params {
-      color: #aab4e8;
-      font-size: 0.98rem;
-      margin-bottom: 0.5rem;
-    }
-    .endpoint-example {
-      background: #18192b;
-      color: #e4e8f7;
-      font-family: monospace;
-      border-radius: 0.5rem;
-      padding: 0.8rem 1rem;
-      margin-top: 0.5rem;
-      font-size: 0.98rem;
-      overflow-x: auto;
+    .back-link:hover {
+      text-decoration: underline;
     }
     /* Footer override for dark theme */
     .premium-footer {
@@ -190,11 +132,7 @@
         <a href="features.html" class="nav-link" data-text="Features"><span>Features</span></a>
         <a href="pricing.html" class="nav-link" data-text="Pricing"><span>Pricing</span></a>
         <a href="contact.html" class="nav-link" data-text="Contact"><span>Contact</span></a>
-        <a href="blog.html" class="nav-link" data-text="Blog"><span>Blog</span></a>
-        <a href="help.html" class="nav-link" data-text="Help"><span>Help Center</span></a>
-        <a href="guides.html" class="nav-link" data-text="Guides"><span>Guides</span></a>
-        <a href="api.html" class="nav-link active" data-text="API"><span>API Docs</span></a>
-        <a href="terms.html" class="nav-link" data-text="Terms"><span>Terms of Service</span></a>
+        <a href="blog.html" class="nav-link active" data-text="Blog"><span>Blog</span></a>
         <a href="login.html" class="nav-link" data-text="Login"><span>Login</span></a>
         <a href="register.html" class="nav-link nav-link-cta"><span>Register</span><div class="nav-link-bg"></div></a>
       </div>
@@ -202,81 +140,33 @@
   </header>
 
   <main>
-    <section class="api-section">
-      <h1>Venturalink API Documentation</h1>
-      <p>
-        Integrate with Venturalink using our RESTful API. Below are some example endpoints and usage.
-      </p>
-      <div class="api-endpoint">
-        <div class="endpoint-title">
-          <span class="endpoint-method">GET</span>
-          <span class="endpoint-url">/api/v1/startups</span>
-        </div>
-        <div class="endpoint-desc">
-          Retrieve a list of all startups registered on Venturalink.
-        </div>
-        <div class="endpoint-params">
-          <strong>Query Params:</strong> <code>category</code> (optional), <code>country</code> (optional)
-        </div>
-        <div class="endpoint-example">
-          Example:<br>
-          <code>GET https://venturalink.com/api/v1/startups?category=fintech&country=IN</code>
-        </div>
-      </div>
-      <div class="api-endpoint">
-        <div class="endpoint-title">
-          <span class="endpoint-method">POST</span>
-          <span class="endpoint-url">/api/v1/investor/register</span>
-        </div>
-        <div class="endpoint-desc">
-          Register a new investor account.
-        </div>
-        <div class="endpoint-params">
-          <strong>Body:</strong> <code>name</code>, <code>email</code>, <code>password</code>
-        </div>
-        <div class="endpoint-example">
-          Example:<br>
-          <code>
-            POST https://venturalink.com/api/v1/investor/register<br>
-            { "name": "Amit", "email": "amit@investor.com", "password": "securepass" }
-          </code>
-        </div>
-      </div>
-      <div class="api-endpoint">
-        <div class="endpoint-title">
-          <span class="endpoint-method">GET</span>
-          <span class="endpoint-url">/api/v1/investor/{id}</span>
-        </div>
-        <div class="endpoint-desc">
-          Get details of a specific investor by ID.
-        </div>
-        <div class="endpoint-params">
-          <strong>Path Param:</strong> <code>id</code> (required)
-        </div>
-        <div class="endpoint-example">
-          Example:<br>
-          <code>GET https://venturalink.com/api/v1/investor/12345</code>
-        </div>
-      </div>
-      <div class="api-endpoint">
-        <div class="endpoint-title">
-          <span class="endpoint-method">POST</span>
-          <span class="endpoint-url">/api/v1/startup/register</span>
-        </div>
-        <div class="endpoint-desc">
-          Register a new startup.
-        </div>
-        <div class="endpoint-params">
-          <strong>Body:</strong> <code>name</code>, <code>founder</code>, <code>email</code>, <code>description</code>
-        </div>
-        <div class="endpoint-example">
-          Example:<br>
-          <code>
-            POST https://venturalink.com/api/v1/startup/register<br>
-            { "name": "TechNova", "founder": "Priya", "email": "priya@technova.com", "description": "AI-powered solutions" }
-          </code>
-        </div>
-      </div>
+    <section class="blog-post-section">
+      <h1>Top 5 Mistakes Founders Make (And How to Avoid Them)</h1>
+      <div class="blog-post-meta">By Kavlin Kaur &middot; March 2025</div>
+      
+      <p>Starting a company is a thrilling journey, but it's also one filled with potential pitfalls. Many founders, driven by passion and a groundbreaking idea, often overlook fundamental aspects of business, leading to common mistakes that can derail their progress. In this post, we'll explore the top five mistakes founders make and provide actionable advice on how to avoid them.</p>
+
+      <h2>1. Not Validating the Market</h2>
+      <p>One of the most common reasons startups fail is that they build a product nobody wants. Founders often fall in love with their solution without first validating that there's a real market need for it. They invest significant time and resources into development, only to find that their target audience doesn't share their enthusiasm.</p>
+      <p><strong>How to Avoid It:</strong> Before writing a single line of code, conduct thorough market research. Talk to potential customers, run surveys, and create a Minimum Viable Product (MVP) to test your assumptions. Use feedback to iterate and refine your idea, ensuring that you're building a solution that solves a genuine problem.</p>
+
+      <h2>2. Ignoring the Competition</h2>
+      <p>Some founders believe their idea is so unique that they have no competition. This is rarely the case. Competition can be direct (companies offering a similar solution) or indirect (alternative ways customers solve the problem your product addresses). Ignoring the competitive landscape is a recipe for disaster.</p>
+      <p><strong>How to Avoid It:</strong> Continuously analyze your competitors. Understand their strengths, weaknesses, pricing, and marketing strategies. This will not only help you differentiate your product but also anticipate market trends and stay ahead of the curve.</p>
+
+      <h2>3. Poor Financial Management</h2>
+      <p>Cash flow is the lifeblood of any startup. Many founders, especially those without a background in finance, struggle with managing their finances effectively. They might underestimate expenses, burn through cash too quickly, or fail to secure adequate funding.</p>
+      <p><strong>How to Avoid It:</strong> Create a detailed financial plan and track your expenses meticulously. Understand your burn rate and runway. If you're not comfortable with financial management, consider hiring a part-time CFO or using financial planning software. Always be fundraising, even when you don't think you need the money.</p>
+
+      <h2>4. Weak or Unbalanced Team</h2>
+      <p>A startup is only as strong as its team. A common mistake is to hire people who are just like you, leading to a lack of diverse skills and perspectives. Another pitfall is not having clear roles and responsibilities, which can lead to conflict and inefficiency.</p>
+      <p><strong>How to Avoid It:</strong> Build a team with complementary skills. Look for people who share your vision and passion but bring different expertise to the table. Define roles and responsibilities clearly from the outset. Foster a culture of open communication and collaboration.</p>
+
+      <h2>5. Not Focusing on Sales and Marketing</h2>
+      <p>Many founders are product-focused and believe that a great product will sell itself. While product quality is crucial, it's only half the battle. Without a solid sales and marketing strategy, even the most innovative product can fail to gain traction.</p>
+      <p><strong>How to Avoid It:</strong> Start thinking about sales and marketing from day one. Identify your target audience and the best channels to reach them. Develop a compelling brand story and a clear value proposition. Don't be afraid to get your hands dirty and sell the product yourself in the early days.</p>
+
+      <a href="blog.html" class="back-link">&larr; Back to Blog</a>
     </section>
   </main>
 
@@ -354,3 +244,4 @@
   </footer>
   <script type="module" src="scripts/main.js"></script>
 </body>
+</html>

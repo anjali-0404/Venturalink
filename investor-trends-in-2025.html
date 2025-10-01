@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>API Docs | Venturalink</title>
+  <title>Investor Trends in 2025 | Venturalink</title>
   <link rel="icon" type="image/png" href="V.png">
   <link rel="stylesheet" href="styles/mainindex.css">
   <style>
@@ -14,7 +14,6 @@
       margin: 0;
       min-height: 100vh;
     }
-
     .main-header {
       background: #23243a;
       box-shadow: 0 2px 16px rgba(102,126,234,0.08);
@@ -23,57 +22,24 @@
       justify-content: center;
       align-items: center;
     }
-
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2rem;
-    }
-
-    .logo {
-      margin-right: 2rem;
-    }
-
     .logo-container {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-
     .logo-icon svg {
       height: 2.5rem;
       width: 2.5rem;
       display: block;
     }
-
     .logo-text img {
       height: 2.2rem;
-      margin-right: 0.5rem;
+      margin-right: -8px;
       vertical-align: middle;
       filter: drop-shadow(0 0 8px #667eea);
     }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .nav-link {
-      padding: 0.5rem 0;
-      font-size: 1rem;
-      color: #e4e8f7;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-link:hover {
-      color: #764ba2;
-    }
-
-    .api-section {
-      max-width: 900px;
+    .blog-post-section {
+      max-width: 800px;
       margin: 3rem auto 2rem auto;
       background: rgba(34,36,58,0.95);
       border-radius: 1.5rem;
@@ -81,62 +47,38 @@
       box-shadow: 0 8px 32px rgba(102,126,234,0.12);
       text-align: left;
     }
-    .api-section h1 {
+    .blog-post-section h1 {
       color: #667eea;
       font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       letter-spacing: 1px;
-      text-align: center;
     }
-    .api-section p {
-      margin-bottom: 2rem;
+    .blog-post-meta {
       color: #aab4e8;
-      font-size: 1.1rem;
-      text-align: center;
-    }
-    .api-endpoint {
-      background: #23243a;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 2px 12px rgba(102,126,234,0.08);
+      font-size: 0.95rem;
       margin-bottom: 2rem;
     }
-    .endpoint-title {
-      color: #667eea;
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+    .blog-post-section p {
+      color: #e4e8f7;
+      font-size: 1.08rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
     }
-    .endpoint-method {
-      font-weight: bold;
+     .blog-post-section h2 {
       color: #764ba2;
-      margin-right: 1rem;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
     }
-    .endpoint-url {
-      font-family: monospace;
-      color: #e4e8f7;
-      background: #18192b;
-      padding: 0.2rem 0.6rem;
-      border-radius: 0.5rem;
-      font-size: 1rem;
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #667eea;
+      text-decoration: none;
+      font-weight: bold;
     }
-    .endpoint-desc {
-      color: #e4e8f7;
-      margin: 0.7rem 0 0.5rem 0;
-    }
-    .endpoint-params {
-      color: #aab4e8;
-      font-size: 0.98rem;
-      margin-bottom: 0.5rem;
-    }
-    .endpoint-example {
-      background: #18192b;
-      color: #e4e8f7;
-      font-family: monospace;
-      border-radius: 0.5rem;
-      padding: 0.8rem 1rem;
-      margin-top: 0.5rem;
-      font-size: 0.98rem;
-      overflow-x: auto;
+    .back-link:hover {
+      text-decoration: underline;
     }
     /* Footer override for dark theme */
     .premium-footer {
@@ -190,11 +132,7 @@
         <a href="features.html" class="nav-link" data-text="Features"><span>Features</span></a>
         <a href="pricing.html" class="nav-link" data-text="Pricing"><span>Pricing</span></a>
         <a href="contact.html" class="nav-link" data-text="Contact"><span>Contact</span></a>
-        <a href="blog.html" class="nav-link" data-text="Blog"><span>Blog</span></a>
-        <a href="help.html" class="nav-link" data-text="Help"><span>Help Center</span></a>
-        <a href="guides.html" class="nav-link" data-text="Guides"><span>Guides</span></a>
-        <a href="api.html" class="nav-link active" data-text="API"><span>API Docs</span></a>
-        <a href="terms.html" class="nav-link" data-text="Terms"><span>Terms of Service</span></a>
+        <a href="blog.html" class="nav-link active" data-text="Blog"><span>Blog</span></a>
         <a href="login.html" class="nav-link" data-text="Login"><span>Login</span></a>
         <a href="register.html" class="nav-link nav-link-cta"><span>Register</span><div class="nav-link-bg"></div></a>
       </div>
@@ -202,81 +140,33 @@
   </header>
 
   <main>
-    <section class="api-section">
-      <h1>Venturalink API Documentation</h1>
-      <p>
-        Integrate with Venturalink using our RESTful API. Below are some example endpoints and usage.
-      </p>
-      <div class="api-endpoint">
-        <div class="endpoint-title">
-          <span class="endpoint-method">GET</span>
-          <span class="endpoint-url">/api/v1/startups</span>
-        </div>
-        <div class="endpoint-desc">
-          Retrieve a list of all startups registered on Venturalink.
-        </div>
-        <div class="endpoint-params">
-          <strong>Query Params:</strong> <code>category</code> (optional), <code>country</code> (optional)
-        </div>
-        <div class="endpoint-example">
-          Example:<br>
-          <code>GET https://venturalink.com/api/v1/startups?category=fintech&country=IN</code>
-        </div>
-      </div>
-      <div class="api-endpoint">
-        <div class="endpoint-title">
-          <span class="endpoint-method">POST</span>
-          <span class="endpoint-url">/api/v1/investor/register</span>
-        </div>
-        <div class="endpoint-desc">
-          Register a new investor account.
-        </div>
-        <div class="endpoint-params">
-          <strong>Body:</strong> <code>name</code>, <code>email</code>, <code>password</code>
-        </div>
-        <div class="endpoint-example">
-          Example:<br>
-          <code>
-            POST https://venturalink.com/api/v1/investor/register<br>
-            { "name": "Amit", "email": "amit@investor.com", "password": "securepass" }
-          </code>
-        </div>
-      </div>
-      <div class="api-endpoint">
-        <div class="endpoint-title">
-          <span class="endpoint-method">GET</span>
-          <span class="endpoint-url">/api/v1/investor/{id}</span>
-        </div>
-        <div class="endpoint-desc">
-          Get details of a specific investor by ID.
-        </div>
-        <div class="endpoint-params">
-          <strong>Path Param:</strong> <code>id</code> (required)
-        </div>
-        <div class="endpoint-example">
-          Example:<br>
-          <code>GET https://venturalink.com/api/v1/investor/12345</code>
-        </div>
-      </div>
-      <div class="api-endpoint">
-        <div class="endpoint-title">
-          <span class="endpoint-method">POST</span>
-          <span class="endpoint-url">/api/v1/startup/register</span>
-        </div>
-        <div class="endpoint-desc">
-          Register a new startup.
-        </div>
-        <div class="endpoint-params">
-          <strong>Body:</strong> <code>name</code>, <code>founder</code>, <code>email</code>, <code>description</code>
-        </div>
-        <div class="endpoint-example">
-          Example:<br>
-          <code>
-            POST https://venturalink.com/api/v1/startup/register<br>
-            { "name": "TechNova", "founder": "Priya", "email": "priya@technova.com", "description": "AI-powered solutions" }
-          </code>
-        </div>
-      </div>
+    <section class="blog-post-section">
+      <h1>Investor Trends in 2025: What’s Hot?</h1>
+      <div class="blog-post-meta">By Team Venturalink &middot; February 2025</div>
+      
+      <p>The investment landscape is in a constant state of flux, with new technologies and market dynamics shaping where the smart money is flowing. As we move through 2025, several key trends have emerged, indicating a significant shift in investor priorities. For founders seeking funding, understanding these trends is crucial. Here’s a look at what’s hot in the world of startup investing this year.</p>
+
+      <h2>1. Sustainable and Impact-First Tech</h2>
+      <p>Investors are increasingly looking for companies that not only promise strong financial returns but also have a positive impact on the world. Sustainability is no longer a niche interest; it's a core investment thesis for many venture capitalists. This includes everything from renewable energy and circular economy models to sustainable agriculture and carbon capture technologies.</p>
+      <p><strong>What this means for founders:</strong> If your startup has a strong ESG (Environmental, Social, and Governance) component, make sure to highlight it in your pitch. Demonstrate how your business model is not just profitable but also sustainable and socially responsible.</p>
+
+      <h2>2. The Next Wave of AI and Automation</h2>
+      <p>Artificial intelligence continues to be a dominant theme, but the focus is shifting. While foundational models and generative AI captured the spotlight in previous years, investors in 2025 are looking for practical applications that solve specific industry problems. This includes AI-powered tools for drug discovery, autonomous logistics, and hyper-personalized customer experiences.</p>
+      <p><strong>What this means for founders:</strong> It's no longer enough to have an "AI startup." You need to show how your AI technology provides a tangible solution and a clear ROI for your customers. Focus on a niche and demonstrate deep domain expertise.</p>
+
+      <h2>3. The Future of Health and Wellness</h2>
+      <p>The pandemic accelerated the adoption of digital health technologies, and this trend shows no signs of slowing down. Investors are particularly interested in startups that are personalizing healthcare, from at-home diagnostics and remote patient monitoring to mental wellness platforms and longevity science. The focus is on proactive and preventative care, rather than reactive treatments.</p>
+      <p><strong>What this means for founders:</strong> If you're in the health tech space, emphasize how your solution empowers patients and improves outcomes. Data privacy and regulatory compliance are also critical, so be prepared to address these issues in detail.</p>
+
+      <h2>4. The Creator Economy and Web3</h2>
+      <p>The creator economy is maturing, and investors are looking for the tools and platforms that will power its next phase of growth. This includes everything from monetization tools for creators to decentralized social media platforms built on Web3 principles. The emphasis is on giving creators more ownership and control over their content and their audience.</p>
+      <p><strong>What this means for founders:</strong> Focus on building a strong community around your product. Demonstrate how you are empowering creators and providing them with new ways to earn a living. A clear understanding of tokenomics and decentralized governance is a plus if you're in the Web3 space.</p>
+
+      <h2>5. The New Era of B2B SaaS</h2>
+      <p>B2B SaaS is a perennially hot sector, but the bar is getting higher. In 2025, investors are looking for vertical SaaS solutions that cater to the specific needs of a particular industry. They are also interested in companies that are leveraging AI to automate workflows and provide predictive insights. Product-led growth (PLG) remains a popular go-to-market strategy, but founders also need to demonstrate a clear path to enterprise sales.</p>
+      <p><strong>What this means for founders:</strong> Know your industry inside and out. Show how your product is not just a "nice-to-have" but a "must-have" for your customers. Be prepared to discuss your go-to-market strategy in detail, including how you plan to acquire and retain customers.</p>
+
+      <a href="blog.html" class="back-link">&larr; Back to Blog</a>
     </section>
   </main>
 
@@ -354,3 +244,4 @@
   </footer>
   <script type="module" src="scripts/main.js"></script>
 </body>
+</html>
